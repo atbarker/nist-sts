@@ -1,4 +1,3 @@
-
 #if defined(__cplusplus)
 extern "C" {
 #endif
@@ -50,3 +49,4 @@ typedef ULONG WORD64[2];  /* 64-bit word */
 #if defined(__cplusplus)
 }
 #endif
+

@@ -1460,3 +1460,4 @@ void __ogg_fdcosqb(int n, double *x, double *wsave, int *ifac)
 	dcsqb1(n, x, wsave, wsave+n, ifac);
 }
 #endif
+
