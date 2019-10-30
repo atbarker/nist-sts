@@ -508,3 +508,4 @@ nist_test_suite()
 	if ( (testVector[0] == 1) || (testVector[TEST_LINEARCOMPLEXITY] == 1) )
 		LinearComplexity(tp.linearComplexitySequenceLength, tp.n);
 }
+

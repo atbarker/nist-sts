@@ -1,5 +1,5 @@
 LIB=-lm
-CFLAGS=-I ./include -Wall -Wextra -Werror -Wshadow -Wpedantic
+CFLAGS=-I ./include -Wall -Wextra -Wshadow -Wpedantic
 CC=clang
 
 OBJ=approximateEntropy.o              \

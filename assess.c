@@ -52,7 +52,7 @@
 
 void	partitionResultFile(int numOfFiles, int numOfSequences, int option, int testNameID);
 void	postProcessResults(int option);
-int		cmp(const double *a, const double *b);
+int		cmp(const void *a, const void *b);
 int		computeMetrics(char *s, int test);
 
 int
@@ -118,7 +118,7 @@ partitionResultFile(int numOfFiles, int numOfSequences, int option, int testName
 	int		i, k, m, j, start, end, num, numread;
 	float	c;
 	FILE	**fp = (FILE **)calloc(numOfFiles+1, sizeof(FILE *));
-	int		*results = (int *)calloc(numOfFiles, sizeof(int *));
+	//int		*results = (int *)calloc(numOfFiles, sizeof(int *));
 	char	*s[MAXFILESPERMITTEDFORPARTITION];
 	char	resultsDir[200];
 	
@@ -187,11 +187,11 @@ partitionResultFile(int numOfFiles, int numOfSequences, int option, int testName
 }
 
 int
-cmp(const double *a, const double *b)
+cmp(const void *a, const void *b)
 {
-	if ( *a < *b )
+	if ( *((double*)a) < *((double*)b) )
 		return -1;
-	if ( *a == *b )
+	if ( *((double*)a) == *((double*)b) )
 		return 0;
 	return 1;
 }
@@ -284,7 +284,8 @@ computeMetrics(char *s, int test)
 {
 	int		j, pos, count, passCount, sampleSize, expCount, proportion_threshold_min, proportion_threshold_max;
 	int		freqPerBin[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-	double	*A, *T, chi2, proportion, uniformity, p_hat, tmp;
+	double	*A, *T, chi2, uniformity, p_hat;
+	//double proportion, tmp;
 	float	c;
 	FILE	*fp;
 	
@@ -353,7 +354,7 @@ computeMetrics(char *s, int test)
 	
 	/* Compute Metric 2: Histogram */
 	
-	qsort((void *)A, sampleSize, sizeof(double), (void *)cmp);
+	qsort((void *)A, sampleSize, sizeof(double), &cmp);
 	for ( j=0; j<sampleSize; j++ ) {
 		pos = (int)floor(A[j]*10);
 		if ( pos == 10 )
