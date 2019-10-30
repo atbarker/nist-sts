@@ -11,3 +11,4 @@ BitSequence**	create_matrix(int M, int Q);
 void			display_matrix(int M, int Q, BitSequence **m);
 void			def_matrix(int M, int Q, BitSequence **m,int k);
 void			delete_matrix(int M, BitSequence **matrix);
+

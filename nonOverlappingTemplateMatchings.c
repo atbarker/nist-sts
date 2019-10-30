@@ -22,7 +22,7 @@ NonOverlappingTemplateMatchings(int m, int n)
 	position in the numOfTemplates variable.
 	----------------------------------------------------------------------------*/
 	unsigned int	bit, W_obs, nu[6], *Wj = NULL; 
-	FILE			*fp;
+	FILE			*fp = NULL;
 	double			sum, chi2, p_value, lambda, pi[6], varWj;
 	int				i, j, jj, k, match, SKIP, M, N, K = 5;
 	char			directory[100];

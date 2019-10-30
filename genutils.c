@@ -665,3 +665,4 @@ ahtopb (char *ascii_hex, BYTE *p_binary, int bin_len)
 		p_binary[i] += nibble;
 	}
 }
+

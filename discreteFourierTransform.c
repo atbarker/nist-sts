@@ -15,7 +15,7 @@ void  __ogg_fdrfftf(int n, double *X, double *wsave, int *ifac);
 void
 DiscreteFourierTransform(int n)
 {
-	double	p_value, upperBound, percentile, N_l, N_o, d, *m, *X, *wsave;
+	double	p_value, upperBound, percentile, N_l, N_o, d, *m = NULL, *X = NULL, *wsave = NULL;
 	int		i, count, ifac[15];
 
 	if ( ((X = (double*) calloc(n,sizeof(double))) == NULL) ||
