@@ -105,7 +105,7 @@ RandomExcursions(int n)
 			x = stateX[i];
 			sum = 0.;
 			for ( k=0; k<6; k++ )
-				sum += pow(nu[k][i] - J*pi[(int)fabs(x)][k], 2) / (J*pi[(int)fabs(x)][k]);
+				sum += pow(nu[k][i] - J*pi[(int)fabs(x + 0.0)][k], 2) / (J*pi[(int)fabs(x + 0.0)][k]);
 			p_value = cephes_igamc(2.5, sum/2.0);
 			
 			if ( isNegative(p_value) || isGreaterThanOne(p_value) )
