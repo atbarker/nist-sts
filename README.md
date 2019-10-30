@@ -1,21 +1,13 @@
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/kravietz/nist-sts.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/kravietz/nist-sts/alerts/)
-[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/kravietz/nist-sts.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/kravietz/nist-sts/context:cpp)
-
 # NIST Statistical Test Suite
 
-This is a slightly updated version of [NIST Statistical Test Suite (STS)](http://csrc.nist.gov/groups/ST/toolkit/rng/documentation_software.html) tool for randomness testing. Main reason for this fork is that the original source code provided by NIST doesn't compile cleanly on Windows using MSVC. Main reason is that MSVC doesn't provide erf() and erfc() functions in standard math library. I've added implementation of these functions and created a project file. You should be now able to compile STS using standard Microsoft Visual C/C++ suite.
+This is a slightly updated version of [NIST Statistical Test Suite (STS)](http://csrc.nist.gov/groups/ST/toolkit/rng/documentation_software.html) tool for randomness testing. The original test suite would compile with horrible warnings under clang or gcc. It now compiles cleanly without warnings and a few cases of undefined behavior have been cleaned up.
 
 ## Building
-This version should compile cleanly under MSVC 2008. I haven't tested it under other versions and MSVC Express, but it's ANSI C so it should work.
 
-The solution is configured to compile using extended instruction set (SSE2) and optimize for speed.
-
-After build is completed you will get a single _assess.exe_ binary which is the test suite.
+Run make. Choose clang or gcc for the compiler. It works fine with both.
 
 ## Usage
 You probably still want to [download](http://csrc.nist.gov/groups/ST/toolkit/rng/documentation_software.html) the original NIST ZIP distribution and use their test files. Reason why I'm not including them here is that the archive is over 40 MB big and most of that is the test data.
-
-After unpacking the ZIP place _assess.exe_ in the top directory. The program expects to have the subdirectories _experiments, templates_ etc in the same directory. 
 
 STS has somewhat old school terminal interface. Simple tutorial can be found in section 5-1 of [NIST SP800-22](http://csrc.nist.gov/groups/ST/toolkit/rng/documents/SP800-22rev1a.pdf).
 
