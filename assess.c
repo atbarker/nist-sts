@@ -186,6 +186,7 @@ partitionResultFile(int numOfFiles, int numOfSequences, int option, int testName
 	return;
 }
 
+//I am not proud of my pointer hack to compare two void* pointers as doubles.
 int
 cmp(const void *a, const void *b)
 {
