@@ -1,6 +1,8 @@
 # NIST Statistical Test Suite
 
-This is a slightly updated version of [NIST Statistical Test Suite (STS)](http://csrc.nist.gov/groups/ST/toolkit/rng/documentation_software.html) tool for randomness testing. The original test suite would compile with horrible warnings under clang or gcc. It now compiles cleanly without warnings and a few cases of undefined behavior have been cleaned up.
+This is a slightly updated version of [NIST Statistical Test Suite (STS)](http://csrc.nist.gov/groups/ST/toolkit/rng/documentation_software.html) tool for randomness testing. The original test suite would compile with horrible warnings under both clang or gcc. It now compiles cleanly without warnings and a few cases of undefined behavior have been cleaned up.
+
+The rest of this makefile is verbatim from the repository this one is forked from (kravietz/nist-sts).
 
 ## Building
 
